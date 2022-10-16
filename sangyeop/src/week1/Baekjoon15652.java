@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.util.function.Function;
 
 public class Baekjoon15652 {
 
@@ -16,8 +17,10 @@ public class Baekjoon15652 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
+        Function<String, Integer> parser = s -> Integer.parseInt(s);
+
+        N = parser.apply(st.nextToken());
+        M = parser.apply(st.nextToken());
 
         numbers = new int[M];
 
